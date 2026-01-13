@@ -1,14 +1,8 @@
-import { Event } from "./EventClass.js";
+import { EventManager } from "./EventManagerClass.js";
 
-let meeting1 = new Event("Standup Meeting", new Date("2026-01-31"), "Bengaluru");
+let newMananger = new EventManager();
+newMananger.createEvent("Standup Meeting", new Date("2026-02-10"), "Bangalore");
+newMananger.createEvent ("Workshop", new Date("2026-03-05"), "Delhi");
 
-let details = meeting1.getDetails();
-console.log(details);
-
-meeting1.addParticipants("Saurav");
-let details1 = meeting1.getDetails();
-console.log(details1);
-
-meeting1.removeParticipants("Ram");
-let details2 = meeting1.getDetails();
-console.log(details2);
+console.log(newMananger.events);
+newMananger.listEvents();
