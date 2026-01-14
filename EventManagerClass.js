@@ -20,11 +20,13 @@ export class EventManager{
     }
 
     findEventById(id){
-        //return event object       
+        //return event object
+        return this.events.find(event => event.id === id) || null;
     }
 
     deleteEvent(id){
-        //removes event 
+        //removes event
+        this.events = this.events.filter(event => event.id !== id);
     }
 
     updateEvent(id, newData){
